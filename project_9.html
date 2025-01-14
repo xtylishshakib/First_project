@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <style>
+        #heder{
+            text-align: center;
+            color: white;
+            background-color: rgb(87, 85, 85);
+            height: 40px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+        }
+        #nav{
+            text-align: center;
+            color: white;
+            background-color:gray;
+            height: 30px;
+            padding-top: 20px;
+        }
+        .abc{
+            display: flex;
+            background-color:white;
+            flex-flow:row wrap;
+            justify-content: space-around;
+            height: 200px;
+            align-content: space-around;
+        }
+        .abc div{
+            text-align: center;
+            background-color:aliceblue;
+            width: 28%;
+            
+        }
+        .A{
+            background-color:rgb(87, 85, 85) ;
+            text-align: center;
+            padding-bottom: 8px;
+            height: 100px;
+        }
+        #Aside{
+            background-color: rgb(161, 159, 159);
+            height: 37px;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <section id="heder">
+        <header>Header</header>
+        <p id="nav">Navigation</p>
+    </section>
+    <br>
+    <br>
+    <br>
+    <div class="abc">
+        <div>
+            <p>Section 1</p>
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Sunt accusamus suscipit <br> doloribus sint fuga! A!</p>
+        </div>
+        <div>
+            <p>Section 2</p>
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Sunt accusamus suscipit <br> doloribus sint fuga! A!</p>
+        </div>
+        <div>
+            <p>Section 3</p>
+            <h2>Heading 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Sunt accusamus suscipit <br> doloribus sint fuga! A!</p>
+        </div>
+    </div>
+
+    <section class="A">
+        <p id="Aside">Aside</p>
+        <footer>Footer</footer>
+
+    </section>
+    
+</body>
+</html>
