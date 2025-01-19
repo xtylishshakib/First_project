@@ -4,67 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        select, textarea, input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        select:focus, textarea:focus, input[type="submit"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            label, input[type="submit"] {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<h2>Customer Feedback Form</h2>
-<form action="#" method="POST">
-    <!-- Course Name -->
-    <label for="course-name">Course Name:</label>
-    <select id="course-name" name="course_name" required>
-        <option value="">-- Select a Course --</option>
-        <option value="Full Stack web development 2.0">Full Stack web development 2.0</option>
-        <option value="UCF 5.0 | C,C++,DSA & STL">UCF 5.0 | C,C++,DSA & STL</option>
-        <option value="Java And DSA: From beginner to pro in one Course">Java And DSA: From beginner to pro in one Course</option>
-        <option value="SQL Fundamentals">SQL Fundamentals: mastering the language of databases</option>
-        <option value="Computer Awareness for NIMCET">Computer Awareness for NIMCET</option>
-        <option value="Full Stack Web development Masterclass">Full Stack Web development Masterclass</option>
-        <option value="Python for Biginners">Python for Biginners</option>
-        <option value="Advance Java">Advance Java</option>
-        <option value="STL in C++">STL in C++</option>
-        <option value="DSA using C++">DSA using C++</option>
-        <option value="DSA Through Java">DSA Through Java</option>
-        <option value="C++ Language">C++ Language In Depth</option>
-        <option value="C Language">C Language with Logic Buildin</option>
-        <option value="Data Structure and algorithm using C">Data Structure and algorithm using C</option>
-        <option value="Project Based Machine Learning Workshop with Python">Project Based Machine Learning Workshop with Python</option>
-        <option value="Competitive Programming for absolute Beginners using C++">Competitive Programming for absolute Beginners using C++</option>
-        <option value="Java Application Development">Java Application Development</option>
-        <option value="Beginner Web Development">Beginner Web Development</option>
-        <option value="Assignmment Solution of Python">Assignmment Solution of Python for beginners</option>
-        <option value="GUI Programming with Python">GUI Programming with Python</option>
-        <option value="Aptitude For Gate">Aptitude For Gate</option>
-        <option value="javascript For Biginners">javascript For Biginners</option>
-        <option value="JavaScrip in Depth">JavaScrip in Depth</option>
-        <option value="Online Portfolio with bootstrap 3">Online Portfolio with bootstrap 3</option>
-        <option value="DSA Using Python">DSA Using Python</option>
-    </select><br><br>
+<div class="container">
+    <h2>Customer Feedback Form</h2>
+    <form action="#" method="POST">
+        <!-- Course Name -->
+        <label for="course-name">Course Name:</label>
+        <select id="course-name" name="course_name" required>
+            <option value="">-- Select a Course --</option>
+            <option value="Full Stack web development 2.0">Full Stack web development 2.0</option>
+            <option value="UCF 5.0 | C,C++,DSA & STL">UCF 5.0 | C,C++,DSA & STL</option>
+            <option value="Java And DSA: From beginner to pro in one Course">Java And DSA: From beginner to pro in one Course</option>
+            <option value="SQL Fundamentals">SQL Fundamentals: mastering the language of databases</option>
+            <option value="Computer Awareness for NIMCET">Computer Awareness for NIMCET</option>
+            <option value="Full Stack Web development Masterclass">Full Stack Web development Masterclass</option>
+            <option value="Python for Biginners">Python for Biginners</option>
+            <option value="Advance Java">Advance Java</option>
+            <option value="STL in C++">STL in C++</option>
+            <option value="DSA using C++">DSA using C++</option>
+            <option value="DSA Through Java">DSA Through Java</option>
+            <option value="C++ Language">C++ Language In Depth</option>
+            <option value="C Language">C Language with Logic Buildin</option>
+            <option value="Data Structure and algorithm using C">Data Structure and algorithm using C</option>
+            <option value="Project Based Machine Learning Workshop with Python">Project Based Machine Learning Workshop with Python</option>
+            <option value="Competitive Programming for absolute Beginners using C++">Competitive Programming for absolute Beginners using C++</option>
+            <option value="Java Application Development">Java Application Development</option>
+            <option value="Beginner Web Development">Beginner Web Development</option>
+            <option value="Assignmment Solution of Python">Assignmment Solution of Python for beginners</option>
+            <option value="GUI Programming with Python">GUI Programming with Python</option>
+            <option value="Aptitude For Gate">Aptitude For Gate</option>
+            <option value="javascript For Biginners">javascript For Biginners</option>
+            <option value="JavaScrip in Depth">JavaScrip in Depth</option>
+            <option value="Online Portfolio with bootstrap 3">Online Portfolio with bootstrap 3</option>
+            <option value="DSA Using Python">DSA Using Python</option>
+        </select><br>
 
-    <!-- Instructor Name -->
-    <label for="instructor-name">Instructor Name:</label>
-    <select id="instructor-name" name="instructor_name" required>
-        <option value="">-- Select an Instructor --</option>
-        <option value="Saurabh Shukla (MySirG)">Saurabh Shukla (MySirG)</option>
-    </select><br><br>
+        <!-- Instructor Name -->
+        <label for="instructor-name">Instructor Name:</label>
+        <select id="instructor-name" name="instructor_name" required>
+            <option value="">-- Select an Instructor --</option>
+            <option value="Saurabh Shukla (MySirG)">Saurabh Shukla (MySirG)</option>
+        </select><br>
 
-    <!-- Rating -->
-    <label for="rating">Rating (1 to 5):</label>
-    <select id="rating" name="rating" required>
-        <option value="">-- Select a Rating --</option>
-        <option value="1">1 - Poor</option>
-        <option value="2">2 - Fair</option>
-        <option value="3">3 - Good</option>
-        <option value="4">4 - Very Good</option>
-        <option value="5">5 - Excellent</option>
-    </select><br><br>
+        <!-- Rating -->
+        <label for="rating">Rating (1 to 5):</label>
+        <select id="rating" name="rating" required>
+            <option value="">-- Select a Rating --</option>
+            <option value="1">1 - Poor</option>
+            <option value="2">2 - Fair</option>
+            <option value="3">3 - Good</option>
+            <option value="4">4 - Very Good</option>
+            <option value="5">5 - Excellent</option>
+        </select><br>
 
-    <!-- Comments -->
-    <label for="comments">Comments:</label><br>
-    <textarea id="comments" name="comments" placeholder="Write your comments here..."></textarea><br><br>
+        <!-- Comments -->
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" placeholder="Write your comments here..."></textarea><br>
 
-    <!-- Submit Button -->
-    <input type="submit" value="Submit Feedback">
-</form>
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Feedback">
+    </form>
+</div>
 
 </body>
 </html>
