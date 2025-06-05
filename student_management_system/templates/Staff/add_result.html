@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <div class="content container-fluid">
+       <div class="page-header">
+          <div class="row align-items-center">
+             <div class="col">
+                <h3 class="page-title">Add Result</h3>
+                <ul class="breadcrumb">
+                   <li class="breadcrumb-item"><a href="subjects.html">Dashboard</a></li>
+                   <li class="breadcrumb-item active">Add Result</li>
+                </ul>
+             </div>
+          </div>
+       </div>
+   {% include 'includes/messages.html' %}
+    {% if action is None %}
+    <form method="post"  action="?action=Show-Students" >
+      {% csrf_token %}
+       <div class="row">
+          <div class="col-sm-12">
+             <div class="card">
+                <div class="card-body">
+
+
+                      <div class="row">
+                         <div class="col-12">
+                            <h5 class="form-title"><span>Add Result</span></h5>
+                         </div>
+                         <div class="col-12 col-sm-6">
+                            <label>Subject</label>
+                               <select class="form-control" name="subject_id">
+                                  <option>--Select Subject--</option>
+                                   {% for i in subjects %}
+                                  <option value="{{i.id}}">{{i.name}}</option>
+                                   {% endfor %}
+                               </select>
+                         </div>
+
+                         <div class="col-12 col-sm-6">
+                            <label>Session Year</label>
+                               <select class="form-control" name="session_year_id">
+                                  <option>--Select Session year--</option>
+                                   {% for i in session_year %}
+                                  <option value="{{i.id}}">{{i.session_start}} To  {{i.session_end}}</option>
+                                   {% endfor %}
+                               </select>
+                         </div>
+
+                        <br>
+                         <div class="col-10 mt-3">
+                            <button type="submit" class="btn btn-primary">Fetch Student</button>
+                         </div>
+                      </div>
+
+                </div>
+             </div>
+          </div>
+
+       </div>
+    </form>
+    {% else %}
+
+    <form method="post"  action="{% url 'staff_save_result' %}" >
+      {% csrf_token %}
+       <div class="row">
+          <div class="col-sm-12">
+             <div class="card">
+                <div class="card-body">
+
+
+                      <div class="row">
+                         <div class="col-12">
+                            <h5 class="form-title"><span>Add Result</span></h5>
+                         </div>
+                         <div class="col-12 col-sm-6">
+                            <label>Subject</label>
+                               <select class="form-control" name="subject_id">
+                                  <option value="{{get_subject.id}}">{{get_subject}}</option>
+                               </select>
+                         </div>
+                            <div class="col-12 col-sm-6">
+                            <label>Session Year</label>
+                               <select class="form-control" name="session_year_id">
+                                  <option value="{{get_session.id}}">{{get_session}}</option>
+                               </select>
+                         </div>
+
+                         <div class="col-12 col-sm-12 mt-4">
+                            <label>Student List</label>
+                               <select class="form-control" name="student_id" >
+                                   {% for i in students %}
+                                  <option value="{{i.admin.id}}">ID{{i.id}}:  {{i.admin.first_name}}</option>
+                                   {% endfor %}
+                               </select>
+                         </div>
+                          <br>
+
+                          <div class="col-12 col-sm-6 mt-4">
+                          <div class="form-group">
+                                <label>Assignment Marks</label>
+                              <input type="number" class="form-control" name="assignment_marks">
+                         </div>
+                          </div>
+                          <div class="col-12 col-sm-6 mt-4">
+                          <div class="form-group">
+                                <label>Exam Marks</label>
+                              <input type="number" class="form-control" name="Exam_marks">
+                         </div>
+                          </div>
+                          <br>
+
+                          <div class="col-10 mt-3">
+                            <button type="submit" class="btn btn-primary">Add Result</button>
+                         </div>
+
+
+                </div>
+             </div>
+          </div>
+
+       </div>
+    </form>
+    {% endif %}
+    </div>
+{% endblock %}
